@@ -1,0 +1,108 @@
+/* Pengaturan Umum & Font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Background dengan animasi bergerak (Gradient Animation) */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Keyframes untuk animasi latar belakang bergerak */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Kontainer Tabel (dibuat sedikit transparan/glassmorphism agar menyatu dengan background) */
+.table-container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+.table-container h2 {
+    color: #2d3748;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Desain Tabel Utama */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Judul Utama di dalam Tabel (colspan) */
+.styled-table thead .table-header-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 14px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Header Kolom (No, Nama, Nilai) */
+.styled-table th {
+    background-color: #f7fafc;
+    color: #4a5568;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Sel Data (td) */
+.styled-table td {
+    padding: 12px 16px;
+    color: #2d3748;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 14px;
+}
+
+/* Baris Interaktif saat kursor mendekat (Hover) */
+.styled-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Desain khusus untuk sel dengan rowSpan (Nilai A) */
+.styled-table .grade-cell {
+    font-weight: bold;
+    color: #667eea;
+    background-color: #f0f4ff;
+    text-align: center;
+    vertical-align: middle;
+}

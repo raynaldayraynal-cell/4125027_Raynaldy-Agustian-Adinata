@@ -1,0 +1,147 @@
+/* Pengaturan Umum & Font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Animasi pergerakan latar belakang gradien secara terus-menerus */
+    background: linear-gradient(135deg, #0f172a, #1e1b4b, #311042, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Keyframes untuk Animasi Latar Belakang Bergerak */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Kontainer Utama Form dengan Animasi Masuk (Fade In & Float) */
+.form-container {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.15);
+    backdrop-filter: blur(12px);
+    animation: floatContainer 4s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animasi Melayang Halus (Floating Effect) */
+@keyframes floatContainer {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.form-container:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.3);
+    animation-play-state: paused; /* Berhenti melayang saat kursor menyentuh agar nyaman diketik */
+}
+
+/* Judul & Subjudul */
+.form-container h2 {
+    color: #f8fafc;
+    font-size: 26px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-subtitle {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Grup Form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Input & Textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: 10px;
+    font-size: 14px;
+    color: #f8fafc;
+    background-color: rgba(30, 41, 59, 0.6);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Efek placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #64748b;
+}
+
+/* Efek saat Input diklik (Focus) dengan Glow Bergeser */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #38bdf8;
+    background-color: rgba(30, 41, 59, 0.9);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* Textarea khusus */
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Tombol Kirim dengan Efek Gradien Menyala */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #38bdf8 0%, #8b5cf6 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efekkilau saat tombol disentuh kursor (Hover & Active) */
+.submit-btn:hover {
+    opacity: 0.95;
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}

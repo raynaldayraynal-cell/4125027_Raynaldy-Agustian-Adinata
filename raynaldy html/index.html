@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Kontak & Sandi</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome untuk ikon mata -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Hubungi Kami</h2>
+        <p class="form-subtitle">Silakan isi formulir dan masukkan sandi Anda di bawah ini.</p>
+
+        <!-- Form diperbaiki: tag penutup </form> dipindah ke paling bawah dan action diarahkan ke wa.me -->
+        <form action="https://wa.me/62881026664117" method="GET" target="_blank">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+            </div>
+
+            <!-- Kolom Sandi dengan Ikon Mata (Hanya Visual tanpa JS) -->
+            <div class="form-group">
+                <label for="sandi">Kata Sandi</label>
+                <div class="password-wrapper">
+                    <input type="password" id="sandi" name="sandi" placeholder="••••••••" required>
+                    <span class="toggle-password">
+                        <i class="fa-regular fa-eye" id="eyeIcon"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pesan">Pesan</label>
+                <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Kirim Pesan ke WhatsApp</button>
+        </form>
+    </div>
+
+</body>
+</html>
